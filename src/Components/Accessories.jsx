@@ -11,7 +11,7 @@ export default function Accessories() {
   useEffect(() => {
     const fetchAccessories = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/getallaccessories');
+        const response = await axios.get('https://quirko-e-commerce.onrender.com/getallaccessories');
         setAccessories(response.data);
         setLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function Accessories() {
     try {
       const selectedAccessory = accessories.find((accessory) => accessory.id === id);
       if (selectedAccessory) {
-        const response = await axios.post('http://localhost:4000/addcart', selectedAccessory);
+        const response = await axios.post('https://quirko-e-commerce.onrender.com/addcart', selectedAccessory);
         if (response.status === 200) {
           setCartItems([...cartItems, selectedAccessory]);
           console.log('Item added to cart:', selectedAccessory);
