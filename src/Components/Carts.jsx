@@ -13,7 +13,7 @@ const CartComponent = () => {
   useEffect(() => {
     const fetchCarts = async () => {
       try {
-        const response = await fetch('http://localhost:4000/getallcarts');
+        const response = await fetch('https://quirko-e-commerce.onrender.com/getallcarts');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -43,7 +43,7 @@ const CartComponent = () => {
 
   const handleIncrement = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4000/increasequantity/${id}`, {
+      const response = await fetch(`https://quirko-e-commerce.onrender.com/increasequantity/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const CartComponent = () => {
 
   const handleDecrement = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4000/decreasequantity/${id}`, {
+      const response = await fetch(`https://quirko-e-commerce.onrender.com/decreasequantity/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const CartComponent = () => {
 
   const deleteCart = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4000/deletecart/${id}`, {
+      const response = await fetch(`https://quirko-e-commerce.onrender.com/deletecart/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
