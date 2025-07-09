@@ -26,7 +26,7 @@ export default function CheckoutForm() {
   useEffect(() => {
     const fetchClothes = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/getclothes/${id}`);
+        const response = await axios.get(`https://quirko-e-commerce.onrender.com/getclothes/${id}`);
         setClothes([
           {
             ...response.data,
