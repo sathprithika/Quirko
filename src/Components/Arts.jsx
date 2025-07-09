@@ -11,7 +11,7 @@ export default function ArtWorks() {
   useEffect(() => {
     const fetchArts = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/getallarts');
+        const response = await axios.get('https://quirko-e-commerce.onrender.com/getallarts');
         setArts(response.data);
         setLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function ArtWorks() {
     try {
       const selectedArt = arts.find((art) => art.id === id);
       if (selectedArt) {
-        const response = await axios.post('http://localhost:4000/addcart', selectedArt);
+        const response = await axios.post('https://quirko-e-commerce.onrender.com/addcart', selectedArt);
         if (response.status === 200) {
           setCartItems([...cartItems, selectedArt]);
           console.log('Item added to cart:', selectedArt);
