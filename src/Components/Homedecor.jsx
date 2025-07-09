@@ -11,7 +11,7 @@ export default function HomeDecor() {
   useEffect(() => {
     const fetchDecors = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/getalldecor');
+        const response = await axios.get('https://quirko-e-commerce.onrender.com/getalldecor');
         setDecors(response.data);
         setLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function HomeDecor() {
     try {
       const selectedDecor = decors.find((decor) => decor.id === id);
       if (selectedDecor) {
-        const response = await axios.post('http://localhost:4000/addcart', selectedDecor);
+        const response = await axios.post('https://quirko-e-commerce.onrender.com/addcart', selectedDecor);
         if (response.status === 200) {
           setCartItems([...cartItems, selectedDecor]);
           console.log('Item added to cart:', selectedDecor);
