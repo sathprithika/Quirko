@@ -11,7 +11,7 @@ export default function Electronics() {
   useEffect(() => {
     const fetchElectronics = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/getallelectronics');
+        const response = await axios.get('https://quirko-e-commerce.onrender.com/getallelectronics');
         setElectronics(response.data);
         setLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function Electronics() {
     try {
       const selectedElectronic = electronics.find((electronic) => electronic.id === id);
       if (selectedElectronic) {
-        const response = await axios.post('http://localhost:4000/addcart', selectedElectronic);
+        const response = await axios.post('https://quirko-e-commerce.onrender.com/addcart', selectedElectronic);
         if (response.status === 200) {
           setCartItems([...cartItems, selectedElectronic]);
           console.log('Item added to cart:', selectedElectronic);
