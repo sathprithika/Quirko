@@ -11,7 +11,7 @@ export default function Sports() {
   useEffect(() => {
     const fetchSports = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/getallsports');
+        const response = await axios.get('https://quirko-e-commerce.onrender.com/getallsports');
         setSports(response.data);
         setLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function Sports() {
     try {
       const selectedSport = sports.find((sport) => sport.id === id);
       if (selectedSport) {
-        const response = await axios.post('http://localhost:4000/addcart', selectedSport);
+        const response = await axios.post('https://quirko-e-commerce.onrender.com/addcart', selectedSport);
         if (response.status === 200) {
           setCartItems([...cartItems, selectedSport]);
           console.log('Item added to cart:', selectedSport);
